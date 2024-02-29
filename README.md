@@ -1,50 +1,29 @@
+
+
 # Reto-uno
 
 # Punto 1
 **Problema:** Crear una función que realice operaciones básicas (suma, resta, multiplicación, división) entre dos números, según la elección del usuario, la forma de entrada de la función será los dos operandos y el caracter usado para la operación. entrada: (1,2,"+"), salida (3).
-# Pasos para la solución:
-1. **Definición de la función operacion(a):** La función operacion toma una lista a como argumento. Esta función evalúa el tercer elemento de la lista a para determinar el tipo de operación a realizar.
-2. **Determinación de la operación:** Se utiliza un condicional if-elif-else para identificar el tipo de operación basado en el tercer elemento de la lista a.
-3. **Realización de la operación:** Si el tercer elemento de a es +, -, *, /, se realiza una dicha operación utilizando los primeros dos elementos de la lista a.
-4. **Manejo de casos especiales:** Se verifica si el segundo elemento de a es cero en el caso de una división para evitar una división por cero.
-5. **Casos no definidos:** En caso de que el usuairo ingrese datos incoherentes se imprime un mensaje de erro. 
+# Solución:
+Se comienza definiendo la función "operacion_basica" que recibe 3 argumentos: dos números y un operador. Luego, dependiendo del operador que corresponda, se realiza la operación. El código continúa con la entrada de los números y el operador. Finalmente, se imprime el resultado.
 
 # Punto 2
 **Problema:** Realice una función que permita validar si una palabra es un palíndromo. Condición: No se vale hacer slicing para invertir la palabra y verificar que sea igual a la original.
-# Pasos para la solución:
-1. **Definición de la función palindromo(a):** La función palindromo toma una cadena de texto a como argumento.
-2. **Inicialización de la variable x:** La variable x se inicializa en -1. Esto se utiliza para acceder a los elementos de a en orden inverso.
-3. **Bucle for para verificar palíndromos:** Se utiliza un bucle for para iterar sobre cada caracter i en la cadena a. En cada iteración, se verifica si el caracter i es diferente del caracter correspondiente en la posición inversa de a. Si se encuentra algún par de caracteres diferentes, se devuelve "No es palíndromo".
-Se decrementa x después de cada iteración para acceder a los caracteres de a en orden inverso.
-4. **Resultado de la función:** Si el bucle for completa su ejecución sin encontrar ningún par de caracteres diferentes, se devuelve un mensaje indicando que la cadena es un palíndromo.
+# Solución:
+El código comienza con la función "es_palindromo", diseñada para verificar si una palabra es un palíndromo, tomando la palabra como argumento. Luego, se inicia convirtiendo todas las letras de la palabra a minúsculas para evitar problemas de sensibilidad a mayúsculas y minúsculas durante la comparación. Posteriormente, se calcula la longitud de la palabra y se guarda en la variable "longitud". Después, el bucle for itera sobre la mitad de la longitud de la palabra, ya que para verificar si una palabra es un palíndromo solo necesitamos comparar la primera mitad con la segunda mitad (en orden inverso). Este enfoque mejora la eficiencia del algoritmo.
 
 # Punto 3
 **Problema:** Escribir una función que reciba una lista de números y devuelva solo aquellos que son primos. La función debe recibir una lista de enteros y retornar solo aquellos que sean primos.
-# Pasos para la solución:
-1. **Definición de la función primos(a):** La función primos toma una lista de números a como argumento.
-2. **Inicialización de la lista x:** La lista x se inicializa como una lista vacía. Esta lista se utilizará para almacenar los números primos encontrados en la lista de entrada a.
-3. **Bucle for para verificar los números primos:** Se utiliza un bucle for para iterar sobre cada número i en la lista a. Se verifica si i es menor que 2. Si es así, se omite este número y se pasa al siguiente mediante continue, ya que los números primos son mayores que 1. Se inicializa la variable primo como verdadera (True). Esta variable se utilizará para determinar si i es primo o no. Se utiliza otro bucle for para iterar sobre los números de 2 hasta la raíz cuadrada de i más 1. En cada iteración, se verifica si i es divisible por j. Si lo es, significa que i no es primo y se establece primo como falso (False).
-Si ningún número j entre 2 y la raíz cuadrada de i divide exactamente a i, primo sigue siendo verdadero, lo que significa que i es primo. Si primo es verdadero después de verificar todos los números j, se agrega i a la lista x.
-4. **Resultado de la función:** Se devuelve un mensaje que indica los números primos encontrados en la lista a.
+# Solución:
+Este código consiste en dos funciones: "es_primo" y "primos_en_lista". La función "es_primo" verifica si un número es primo, tomando el número como argumento. Inicia comprobando si el número es menor o igual a 1, en cuyo caso devuelve Falso. Luego, para números menores o iguales a 3, devuelve Verdadero ya que son primos. Si el número es divisible por 2 o 3, devuelve Falso. Después, se utiliza un bucle while para iterar desde 5 hasta la raíz cuadrada del número. Durante cada iteración, se verifica si el número es divisible por i o i + 2. Si lo es, devuelve Falso, indicando que el número no es primo. Si pasa todas estas comprobaciones, devuelve Verdadero. La función "primos_en_lista" toma una lista de números y devuelve una lista que contiene solo los números primos de la lista original, utilizando la función "es_primo". Se proporciona un ejemplo de uso, donde se crea una lista de números del 1 al 10 y se llama a "primos_en_lista" con esa lista como argumento. Luego, se imprime la lista resultante de números primos.
 
 # Punto 4
 **Problema:** Escribir una función que reciba una lista de números enteros y retorne la mayor suma entre dos elementos consecutivos.
-# Pasos para la solución:
-1. **Definición de la función suma_mayor(a):** Se define una función llamada suma_mayor que toma una lista de números enteros a como argumento.
-2. **Ordenamiento de la lista:** Se ordena la lista a utilizando la función sorted(). Esto garantiza que los números estén en orden ascendente.
-3. **Inicialización de la variable x:** Se inicializa la variable x con el valor -1. Esta variable se utilizará para acceder a los elementos de a en orden inverso.
-4. **Bucle for para encontrar los elementos consecutivos de mayor valor:** Se utiliza un bucle for para iterar sobre los índices de a desde 0 hasta len(a) - 2.
-En cada iteración, se compara la diferencia entre el elemento actual a[x] y el elemento anterior a[x-1].
-Si la diferencia es 1 o -1, significa que los elementos son consecutivos. Se devuelve un mensaje que indica los dos elementos de mayor valor consecutivo encontrados y su suma.
-5. **Manejo de casos especiales:** Si no se encuentran elementos consecutivos, se devuelve un mensaje indicando que no existen dichos elementos.
+# Solución:
+Este código se define en una función llamada "mayor_suma_consecutiva" que calcula la mayor suma entre dos elementos consecutivos en una lista dada. Primero, se verifica si la lista tiene menos de dos elementos; en ese caso, no es posible realizar una suma consecutiva, por lo que devuelve None. Después, inicializa la variable "mayor_suma" con la suma de los dos primeros elementos de la lista. Luego, itera sobre la lista y calcula la suma de cada par de elementos consecutivos. Si encuentra una suma mayor que la "mayor_suma" actual, actualiza el valor de "mayor_suma". Finalmente, devuelve la "mayor_suma" encontrada. Se proporciona un ejemplo de uso donde se aplica la función a una lista de números del 1 al 10, mostrando la mayor suma consecutiva entre dos elementos.
 
 # Punto 5
 **Problema:** Escribir una función que reciba una lista de string y retorne unicamente aquellos elementos que tengan los mismos caracteres. e.g. entrada: ["amor", "roma", "perro"], salida ["amor", "roma"]
-# Pasos para la solución:
-1. **Definición de la función mismos_caracteres(a):** Se define una función llamada mismos_caracteres que toma una lista de palabras a como argumento.
-2. **Inicialización de la lista x:** Se inicializa la lista x como una lista vacía. Esta lista se utilizará para almacenar las palabras que tienen los mismos caracteres que al menos una otra palabra en la lista a.
-3. **Bucle for anidado para comparar palabras:** Se utiliza un bucle for externo para iterar sobre los índices de la lista a. Dentro del bucle externo, se utiliza otro bucle for para iterar sobre los índices restantes en a. Se crea un conjunto de caracteres (conjunto_palabra) para la palabra actual en el bucle externo. Se crea otro conjunto de caracteres (conjunto_comparar) para la palabra actual en el bucle interno.
-Si los conjuntos son iguales y la palabra actual en el bucle interno no está en la lista x, se agrega tanto la palabra del bucle externo como la palabra del bucle interno a la lista x.
-4. **Resultado de la función:** Se devuelve un mensaje que indica las palabras que tienen los mismos caracteres con al menos una otra palabra en la lista a. Los conjuntos se utilizan para evitar duplicados en la lista x.
+# Solución:
+El código define una función llamada "mismos_caracteres" que toma una lista de palabras como entrada y devuelve una nueva lista que contiene solo aquellas palabras que tienen todos los caracteres únicos, es decir, donde cada letra en la palabra es única. En el bucle "for", itera sobre cada palabra en la lista de entrada y utiliza la función "set" para convertir la palabra en un conjunto de caracteres únicos. Luego, compara la longitud del conjunto de caracteres únicos con la longitud original de la palabra. Si son iguales, significa que todos los caracteres en la palabra son únicos, por lo que se agrega la palabra a la lista "resultado". Finalmente, se proporciona un ejemplo de uso donde se aplica la función a una lista de palabras y se muestra la lista resultante de palabras con caracteres únicos.
 
-   
